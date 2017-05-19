@@ -58,7 +58,6 @@ public class HexWorld extends World {
                     y = organism.getY() + organism.getActionRange();
                 }
             }
-            System.out.println(fate);
             organism.checkPosition(x,y);
         }while(!(organism.checkPosition(x,y)));
         return new Point(x,y);

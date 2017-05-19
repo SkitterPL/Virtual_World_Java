@@ -4,8 +4,6 @@ package VirtualWorld.frames;
  * Created by Bartosz Luczak on 21.04.2017.
  */
 import java.awt.*;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
 import javax.swing.*;
 import VirtualWorld.World;
 import VirtualWorld.animals.Human;
@@ -62,11 +60,27 @@ public class MainFrame extends JFrame {
         SaveButton save = new SaveButton(getWorld(), getLog());
         LoadButton load = new LoadButton(this);
         QuitButton quit = new QuitButton();
+        JButton next = new JButton("Next turn");
+        next.addActionListener(e -> {
+              Human temp =(Human)getWorld().isAlive('H');
+              if(temp==null)
+                 turn();
+        });
+        JButton skill=new JButton("Skill");
+        skill.addActionListener(e->{
+            Human temp =(Human)getWorld().isAlive('H');
+            if(temp!=null) {
+                temp.setActionKey(10);
+                turn();
+            }
+        });
 
         save.setFocusable(false);
         load.setFocusable(false);
         quit.setFocusable(false);
         getAdd().setFocusable(false);
+        next.setFocusable(false);
+        skill.setFocusable(false);
 
         hello.setBounds(getWorld().getWidth()*23/2+100,1,200,20);
         panel.setBounds(1,30,frame.getWidth()-350,400);
@@ -75,6 +89,8 @@ public class MainFrame extends JFrame {
         quit.setBounds(221,530, 100,20);
         logpanel.setBounds(frame.getWidth()-340, 30, 320,300);
         getAdd().setBounds(frame.getWidth()-350, 340,300,200);
+        next.setBounds(1,500,100,20);
+        skill.setBounds(111,500,100,20);
 
         frame.add(hello);
         frame.add(panel);
@@ -83,6 +99,8 @@ public class MainFrame extends JFrame {
         frame.add(quit);
         frame.add(logpanel);
         frame.add(getAdd());
+        frame.add(next);
+        frame.add(skill);
     }
 
     public World getWorld() {

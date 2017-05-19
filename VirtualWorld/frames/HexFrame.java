@@ -11,7 +11,7 @@ import static java.lang.StrictMath.*;
  * Created by Bartosz Łuczak on 08.05.2017.
  */
 public class HexFrame extends BoardFrame {
-    public HexFrame(World world, AddFrame a){
+    HexFrame(World world, AddFrame a){
         this.addf=a;
         this.world=world;
         side=15;

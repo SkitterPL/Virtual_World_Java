@@ -19,7 +19,7 @@ public class Hogweed extends Plant {
         this.world=world;
         this.symbol='X';
         this.speciesName="Sosnowsky's Hogweed";
-        this.chanceForSpreading=3;
+        this.chanceForSpreading=0;
         this.color= Color.green.darker();
         this.world.setHowManyOrganisms(this.world.getHowManyOrganisms()+1);
         this.world.getEvents().addEvent("New Sosnowsky's Hogweed has appeared!");

@@ -12,11 +12,11 @@ import VirtualWorld.World;
 
 abstract public class BoardFrame extends JPanel{
 
-    protected Dimension dim;
-    protected ArrayList<Shape> shapes;
+    Dimension dim;
+    ArrayList<Shape> shapes;
     protected World world;
-    protected int side;
-    protected AddFrame addf;
+    int side;
+    AddFrame addf;
 
     BoardFrame() {
         shapes = new ArrayList<>();

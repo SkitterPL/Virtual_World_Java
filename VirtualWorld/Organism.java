@@ -13,7 +13,7 @@ public abstract class Organism {
     protected int age;
     protected char symbol;
     private int actionRange;
-    protected String type;
+    String type;
     protected Color color;
     protected World world;
     protected String speciesName;
@@ -98,7 +98,7 @@ public abstract class Organism {
         return actionRange;
     }
 
-    public void setActionRange(int actionRange) {
+    protected void setActionRange(int actionRange) {
         this.actionRange = actionRange;
     }
 }
